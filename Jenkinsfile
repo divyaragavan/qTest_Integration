@@ -12,6 +12,16 @@ pipeline {
     choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')                 
   }
 
+def runTest(application) {  
+      try {
+        echo "application: $application"
+        sh 'make docker-clean'
+        timeout(time: 600, unit: 'MINUTES') {
+            sh "make test-${application}"
+        }	
+      }catch(Exception e) {
+         echo  "ERROR"
+       }
 
 stages {
         stage('stage1') {
@@ -22,7 +32,7 @@ stages {
             script {
               var = params.OR_PODS
               echo "VAR  $var"	      
-              sh 'python3 -m robot.run — NoStatusRC — outputdir reports1 src/keywords'
+               runTest('leaf-spine-onboarding')
             }
           }
         }     
