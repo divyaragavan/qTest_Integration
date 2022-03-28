@@ -15,7 +15,8 @@ pipeline {
 		 description: 'Run the leaf_spine_onboarding test suite')	 
     choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')                 
   }
-
+  
+node("myAgent") {
 stages {
         stage('stage1') {
 	  //agent { label 'Built-In Node' }
@@ -32,3 +33,5 @@ stages {
         }     
       }
 }
+}
+
