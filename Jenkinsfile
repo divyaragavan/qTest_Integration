@@ -4,8 +4,7 @@ testParams = [:]
 
 def runTest(application) {  
       try {
-        echo "application: $application"
-        sh 'make docker-clean'
+        echo "application: $application"        
         timeout(time: 600, unit: 'MINUTES') {
             sh "make test-${application}"
         }	
