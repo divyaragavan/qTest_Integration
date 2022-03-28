@@ -4,7 +4,8 @@ def runTest(application) {
 	try {
 		echo "application: $application"
 		dir("test-${application}") {
-			sh "pwd"
+			a=sh "pwd"
+			sh "$a/src"
 			sh "make test-${application}"
 		}
 	}finally {
