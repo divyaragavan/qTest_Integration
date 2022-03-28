@@ -2,16 +2,6 @@
 
 testParams = [:]
 
-
-pipeline {
-  agent none  
-  parameters {
-    booleanParam(name: 'leaf_spine_onboarding',
-                 defaultValue: true,
-		 description: 'Run the leaf_spine_onboarding test suite')	 
-    choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')                 
-  }
-
 def runTest(application) {  
       try {
         echo "application: $application"
@@ -23,6 +13,15 @@ def runTest(application) {
         echo  "ERROR"
        }
 }
+
+pipeline {
+  agent none  
+  parameters {
+    booleanParam(name: 'leaf_spine_onboarding',
+                 defaultValue: true,
+		 description: 'Run the leaf_spine_onboarding test suite')	 
+    choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')                 
+  }
 
 stages {
         stage('stage1') {
