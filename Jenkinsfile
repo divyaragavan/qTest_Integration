@@ -24,7 +24,8 @@ stages {
           steps {
             script {
               var = params.OR_PODS
-              echo "VAR  $var"	      
+              echo "VAR  $var"	
+	      sh 'python3 -m robot src/keywords/leaf_spine_onboarding.robot'
             }
           }
         }     
