@@ -18,6 +18,7 @@ pipeline {
 
 stages {
         stage('stage1') {
+	  agent { label 'common_builder' }
           when {
             expression { params.leaf_spine_onboarding == true }
           }
