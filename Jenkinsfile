@@ -22,7 +22,7 @@ stages {
             script {
               var = params.OR_PODS
               echo "VAR  $var"	      
-              sh "cd src/keywords"		    
+              sh 'cd src/keywords'
             }
           }
         }     
