@@ -4,7 +4,7 @@ testParams = [:]
 
 def runTest(application) {  	
         echo "application: $application" 
-	sh "make test-leaf-spine-onboarding"
+	sh "robot -P /tmp/build -d test_results -L DEBUG -b debug.txt --extension rst test_suite/leaf-spine-onboarding"
 }
 
 pipeline {
@@ -18,7 +18,6 @@ pipeline {
 
 stages {
         stage('stage1') {
-	  agent { label 'general-agent' }
           when {
             expression { params.leaf_spine_onboarding == true }
           }
