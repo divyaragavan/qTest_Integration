@@ -12,5 +12,4 @@ REBOT := rebot $(RXBOT_ARGS)
 
 .PHONY: test-leaf-spine-onboarding
 test-leaf-spine-onboarding:
-        $(ROBOT) $(call RXBOT_SUITE,leaf-spine-onboarding) --extension rst test_suite/leaf-spine-onboarding
-        $(REBOT) $(TEST_RESULTS)/output.xml
+	$(ROBOT) $(call RXBOT_SUITE,leaf-spine-onboarding) --extension rst test_suite/leaf-spine-onboarding
