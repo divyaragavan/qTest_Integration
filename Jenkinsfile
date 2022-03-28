@@ -25,7 +25,7 @@ stages {
             script {
               var = params.OR_PODS
               echo "VAR  $var"	
-	      runTest("HELLO")'
+	      runTest("leaf-spine-onboarding")
             }
           }
         }     
