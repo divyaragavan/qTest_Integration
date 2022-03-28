@@ -2,8 +2,7 @@
 
 testParams = [:]
 
-def runTest(application) {  
-	checkout scm
+def runTest(application) {  	
         echo "application: $application"              
 }
 
