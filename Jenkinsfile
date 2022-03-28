@@ -5,9 +5,7 @@ testParams = [:]
 def runTest(application) {  
       try {
         echo "application: $application"        
-        timeout(time: 600, unit: 'MINUTES') {
-            sh "make test-${application}"
-        }	
+        sh "make test-${application}"
       }catch(Exception e) {
         echo  "ERROR"
        }
