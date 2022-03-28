@@ -6,8 +6,8 @@ def runTest(application) {
 		dir("test-${application}") {
 			a = sh "pwd"
 			sh "echo $a"
-			sh "cd /home/developer/qtest/qTest_Integration/src"
-			sh "make test-leaf-spine-onboarding"
+			sh "cd /home/developer/qtest/qTest_Integration/src && make test-leaf-spine-onboarding"
+			//sh "make test-leaf-spine-onboarding"
 		}
 	}finally {
 			submitJUnitTestResultsToqTest([apiKey: 'cc212465-8fa4-4707-8955-5d0fb1da9ebe', containerID: 983384, containerType: 'release', createNewTestRunsEveryBuildDate: true, createTestCaseForEachJUnitTestClass: true, createTestCaseForEachJUnitTestMethod: false, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: true, parseTestResultsPattern: 'target/**/**.xml', projectID: 73444, qtestURL: 'https://smartrg.qtestnet.com/', submitToAReleaseAsSettingFromQtest: false, submitToExistingContainer: true, utilizeTestResultsFromCITool: false])
