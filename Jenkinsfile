@@ -5,7 +5,7 @@ testParams = [:]
 def runTest(application) {  
       try {
         echo "application: $application"        
-        sh "make test-${application}"
+        sh "make test-leaf-spine-onboarding"
       }catch(Exception e) {
         echo  "ERROR"
        }
