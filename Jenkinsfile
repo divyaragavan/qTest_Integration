@@ -21,8 +21,7 @@ stages {
           steps {
             script {
               var = params.OR_PODS
-              echo "VAR  $var"
-	      sh "cd src/"
+              echo "VAR  $var"	      
 	      sh "make test-leaf-spine-onboarding"
             }
           }
