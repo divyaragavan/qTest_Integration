@@ -14,7 +14,7 @@ pipeline {
 
 def runTest(application) {  
       try {
-        echo "applo
+        echo "application: $application"
         sh 'make docker-clean'
         timeout(time: 600, unit: 'MINUTES') {
             sh "make test-${application}"
