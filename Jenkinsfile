@@ -6,7 +6,7 @@ def runTest(application) {
 		dir("test-${application}") {
 			a = sh "pwd"
 			sh "echo $a"
-			sh "ls -al $a"
+			sh "ls -al $pwd"
 			sh "make test-${application}"
 		}
 	}finally {
