@@ -4,6 +4,7 @@ testParams = [:]
 
 def runTest(application) {  
       try {
+	checkout scm
         echo "application: $application"        
         sh "make test-leaf-spine-onboarding"
       }catch(Exception e) {
