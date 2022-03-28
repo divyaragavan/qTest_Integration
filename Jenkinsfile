@@ -7,8 +7,7 @@ def runTest(application) {
 	//sh "robot -P /tmp/build -d test_results -L DEBUG -b debug.txt --extension rst test_suite/leaf-spine-onboarding"
 }
 
-pipeline {
-  agent none  
+pipeline {  
   parameters {
     booleanParam(name: 'leaf_spine_onboarding',
                  defaultValue: true,
