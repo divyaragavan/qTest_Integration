@@ -3,13 +3,9 @@
 testParams = [:]
 
 def runTest(application) {  
-      try {
 	checkout scm
         echo "application: $application"        
-        sh "python3 -m robot src/keywords/leaf_spine_onboarding.robot"
-      }catch(Exception e) {
-        echo  "ERROR"
-       }
+        sh "python3 -m robot src/keywords/leaf_spine_onboarding.robot"      
 }
 
 pipeline {
