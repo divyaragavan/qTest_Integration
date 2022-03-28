@@ -18,7 +18,7 @@ pipeline {
 
 stages {
         stage('stage1') {
-	  agent { label 'Built-In Node' }
+	  //agent { label 'Built-In Node' }
           when {
             expression { params.leaf_spine_onboarding == true }
           }
