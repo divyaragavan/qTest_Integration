@@ -4,8 +4,7 @@ testParams = [:]
 
 def runTest(application) {  
 	checkout scm
-        echo "application: $application"        
-        sh "python3 -m robot src/keywords/leaf_spine_onboarding.robot"      
+        echo "application: $application"              
 }
 
 pipeline {
