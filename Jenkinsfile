@@ -3,7 +3,8 @@
 testParams = [:]
 
 def runTest(application) {  	
-        echo "application: $application"              
+        echo "application: $application" 
+	sh "make test-leaf-spine-onboarding"
 }
 
 pipeline {
