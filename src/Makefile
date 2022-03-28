@@ -12,6 +12,5 @@ REBOT := rebot $(RXBOT_ARGS)
 
 .PHONY: test-leaf-spine-onboarding
 test-leaf-spine-onboarding:
-    robot test_suite/leaf-spine-onboarding
-#   $(ROBOT) $(call RXBOT_SUITE,leaf-spine-onboarding) $(ROBOT_TEST_OPTS) --exclude skipped test_suite/leaf-spine-onboarding
-#   $(REBOT) $(TEST_RESULTS)/output.xml
+    $(ROBOT) $(call RXBOT_SUITE,leaf-spine-onboarding) $(ROBOT_TEST_OPTS) --extension rst test_suite/leaf-spine-onboarding
+    $(REBOT) $(TEST_RESULTS)/output.xml
