@@ -14,14 +14,15 @@ pipeline {
 
 def runTest(application) {  
       try {
-        echo "application: $application"
+        echo "applo
         sh 'make docker-clean'
         timeout(time: 600, unit: 'MINUTES') {
             sh "make test-${application}"
         }	
       }catch(Exception e) {
-         echo  "ERROR"
+        echo  "ERROR"
        }
+}
 
 stages {
         stage('stage1') {
