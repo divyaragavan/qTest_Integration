@@ -5,7 +5,7 @@ def runTest(application) {
 		echo "application: $application"
 		dir("test-${application}") {
 			a=sh "pwd"
-			sh "$a/src"
+			sh "$a/solution-test-sdx-gm"
 			sh "make test-${application}"
 		}
 	}finally {
