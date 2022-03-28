@@ -22,7 +22,9 @@ stages {
             script {
               var = params.OR_PODS
               echo "VAR  $var"	      
-	      sh "make test-leaf-spine-onboarding"
+	      timeout(time: 600, unit: 'MINUTES') {
+                sh "make test-${application}"
+              }
             }
           }
         }     
