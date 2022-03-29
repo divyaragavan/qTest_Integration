@@ -1,7 +1,6 @@
 #!groovy
 
 def runTest(application) {
-      try{
 		echo "application: $application"
 		dir("test-${application}") {
 			a = sh "pwd"
@@ -9,9 +8,6 @@ def runTest(application) {
 			sh "cd /home/developer/qtest/qTest_Integration/src && make test-leaf-spine-onboarding"
 			//sh "make test-leaf-spine-onboarding"
 		}
-      }finally{
-        submitJUnitTestResultsToqTest([apiKey: 'cc212465-8fa4-4707-8955-5d0fb1da9ebe', containerID: 280309, containerType: 'release', createTestCaseForEachJUnitTestClass: false, createTestCaseForEachJUnitTestMethod: true, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: false, projectID: 73444, qtestURL: 'https://smartrg.qtestnet.com/', submitToAReleaseAsSettingFromQtest: true, submitToExistingContainer: false, utilizeTestResultsFromCITool: true])
-      }
 }
 
 testParams = [:]
@@ -22,7 +18,10 @@ pipeline {
     booleanParam(name: 'leaf_spine_onboarding',
                  defaultValue: true,
 		 description: 'Run the leaf_spine_onboarding test suite')	 
-    choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')                 
+    choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')  
+    booleanParam(name: 'Publish',
+                 defaultValue: true,
+		         description: 'publish results to qtest')	     
   }
 
 
@@ -39,6 +38,12 @@ stages {
 	      runTest('leaf-spine-onboarding')
             }
           }
-        }     
+        }
+        stage('Publish') {
+              agent any
+              steps {
+                submitJUnitTestResultsToqTest([apiKey: 'cc212465-8fa4-4707-8955-5d0fb1da9ebe', containerID: 280309, containerType: 'release', createTestCaseForEachJUnitTestClass: false, createTestCaseForEachJUnitTestMethod: true, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: false, projectID: 73444, qtestURL: 'https://smartrg.qtestnet.com/', submitToAReleaseAsSettingFromQtest: true, submitToExistingContainer: false, utilizeTestResultsFromCITool: true])
+              }
+              }        
       }
 }
