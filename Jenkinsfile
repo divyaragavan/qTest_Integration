@@ -2,12 +2,16 @@
 
 def runTest(application) {
 		echo "application: $application"
+	try{
 		dir("test-${application}") {
 			a = sh "pwd"
 			sh "echo $a"
 			sh "cd /home/developer/qtest/qTest_Integration/src && make test-leaf-spine-onboarding"
 			//sh "make test-leaf-spine-onboarding"
 		}
+	}finally {
+        archiveArtifacts artifacts: "test-${application}/test_results/**", allowEmptyArchive: false
+        }
 }
 
 testParams = [:]
