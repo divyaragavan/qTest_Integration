@@ -15,11 +15,12 @@ testParams = [:]
 pipeline {
   agent any
   parameters {
+    separator(name: "LEAF_SPINE_ONBOARDING_SECTION", sectionHeader: "Leaf spine onboarding stage can run with any OR-pods (s,m,l,xl) by choosing the option")
     booleanParam(name: 'leaf_spine_onboarding',
                  defaultValue: true,
 		 description: 'Run the leaf_spine_onboarding test suite')	 
     choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')
-    separator(name: "LAST_AUTOMATION", sectionHeader: "Downstream Jobs - Team LAST Automation - Stages and Parameters")
+    separator(name: "LAST_AUTOMATION")
     booleanParam(name: 'PublishRobotResults',
                  defaultValue: true,
 		 description: 'publish robot results')	  
