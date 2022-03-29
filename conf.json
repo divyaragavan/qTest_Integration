@@ -1,0 +1,6 @@
+{
+  "git_url": "https://github.com/divyaragavan/qTest_Integration.git",
+  "local_repository": "test_suite/leaf-spine-onboarding",
+  "qtest_api_token": "cc212465-8fa4-4707-8955-5d0fb1da9ebe",
+  "qtest_url": "https://smartrg.qtestnet.com/"
+}
