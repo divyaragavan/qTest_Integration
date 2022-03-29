@@ -5,7 +5,7 @@ def runTest(application) {
 		dir("test-${application}") {
 			a = sh "pwd"
 			echo "$a"
-			ls -lrt $a
+			ls -lrt /root/.jenkins/workspace/divyaragavan_fork_main/src/test_results
 			sh "cd /home/developer/qtest/qTest_Integration/src && make test-leaf-spine-onboarding"
 			sh "ls -lrt /root/.jenkins/workspace/divyaragavan_fork_main/src/test_results"
 			//sh "make test-leaf-spine-onboarding"
