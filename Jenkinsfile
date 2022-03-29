@@ -50,7 +50,8 @@ stages {
             } 
         stage('Publish') {
               agent any
-              steps {		
+              steps {
+		xunit([JUnit(excludesPattern: '', pattern: '', stopProcessingIfError: true)])
                 submitJUnitTestResultsToqTest([apiKey: 'cc212465-8fa4-4707-8955-5d0fb1da9ebe', containerID: 280309, containerType: 'release', createTestCaseForEachJUnitTestClass: true, createTestCaseForEachJUnitTestMethod: false, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: true, projectID: 73444, qtestURL: 'https://smartrg.qtestnet.com', submitToAReleaseAsSettingFromQtest: true, submitToExistingContainer: false, utilizeTestResultsFromCITool: false])
               }
               }        
