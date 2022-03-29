@@ -61,7 +61,7 @@ stages {
               steps {
 		//junit(allowEmptyResults: true,testResults: '*.xml')
 		//xunit testDataPublishers: [attachments()], tools: [JUnit(excludesPattern: '', failIfNotNew: false, pattern: '', skipNoTestFiles: true, stopProcessingIfError: true)]
-                submitJUnitTestResultsToqTest([apiKey: 'cc212465-8fa4-4707-8955-5d0fb1da9ebe', containerID: 280309, containerType: 'release', createTestCaseForEachJUnitTestClass: true, createTestCaseForEachJUnitTestMethod: true, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: true, projectID: 73444, qtestURL: 'https://smartrg.qtestnet.com', submitToAReleaseAsSettingFromQtest: true, submitToExistingContainer: false, utilizeTestResultsFromCITool: false])
+                submitJUnitTestResultsToqTest([apiKey: 'cc212465-8fa4-4707-8955-5d0fb1da9ebe', containerID: 280309, containerType: 'release', createTestCaseForEachJUnitTestClass: true, createTestCaseForEachJUnitTestMethod: false, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: true, projectID: 73444, qtestURL: 'https://smartrg.qtestnet.com', submitToAReleaseAsSettingFromQtest: true, submitToExistingContainer: false, utilizeTestResultsFromCITool: false])
               }
               }        
       }
