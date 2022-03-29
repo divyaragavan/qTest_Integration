@@ -46,12 +46,18 @@ stages {
         }
 	stage('PublishRobotResults') {
               agent any
+	    when {
+                 expression { params.PublishRobotResults == true }
+              }
               steps {
               robot archiveDirName: 'robot-plugin', logFileName: 'log.html', outputFileName: 'output.xml', outputPath: '/home/developer/qtest/qTest_Integration/src/test_results', overwriteXAxisLabel: '', reportFileName: 'report.html'
               }
             } 
         stage('Publish') {
               agent any
+	      when {
+                 expression { params.Publish == true }
+              }             		
               steps {
 		junit(allowEmptyResults: true,testResults: '*.xml')
 		//xunit testDataPublishers: [attachments()], tools: [JUnit(excludesPattern: '', failIfNotNew: false, pattern: '', skipNoTestFiles: true, stopProcessingIfError: true)]
