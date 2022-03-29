@@ -10,7 +10,7 @@ def runTest(application) {
 			//sh "make test-leaf-spine-onboarding"
 		}
 	}finally {
-        archiveArtifacts artifacts: "test-${application}/test_results/**", allowEmptyArchive: false
+        archiveArtifacts artifacts: "**/test_results/**", allowEmptyArchive: false
         }
 }
 
