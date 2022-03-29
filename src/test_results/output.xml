@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.6.9 on linux)" generated="20220329 14:30:45.085" rpa="false" schemaversion="2">
+<suite id="s1" name="Leaf Spine Onboarding" source="/home/developer/qtest/qTest_Integration/src/keywords/leaf_spine_onboarding.robot">
+<test id="s1-t1" name="qTest Integration Sample">
+<kw name="Given QTest Integration Sample Test">
+<kw name="Log" library="BuiltIn">
+<arg>"This is a successful qTest-pipelines result integration"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220329 14:30:45.283" level="INFO">"This is a successful qTest-pipelines result integration"</msg>
+<status status="PASS" starttime="20220329 14:30:45.282" endtime="20220329 14:30:45.284"/>
+</kw>
+<status status="PASS" starttime="20220329 14:30:45.281" endtime="20220329 14:30:45.284"/>
+</kw>
+<status status="PASS" starttime="20220329 14:30:45.276" endtime="20220329 14:30:45.284"/>
+</test>
+<status status="PASS" starttime="20220329 14:30:45.087" endtime="20220329 14:30:45.307"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Leaf Spine Onboarding">Leaf Spine Onboarding</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
