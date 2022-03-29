@@ -45,7 +45,7 @@ stages {
 	stage('PublishRobotResults') {
               agent any
               steps {
-              robot archiveDirName: 'robot-plugin', logFileName: 'log.html', outputFileName: 'Output.xml', outputPath: '/home/developer/qtest/qTest_Integration/src/test_results', overwriteXAxisLabel: '', reportFileName: 'report.html'
+              robot archiveDirName: 'robot-plugin', logFileName: 'log.html', outputFileName: 'output.xml', outputPath: '/home/developer/qtest/qTest_Integration/src/test_results', overwriteXAxisLabel: '', reportFileName: 'report.html'
               }
             } 
         stage('Publish') {
