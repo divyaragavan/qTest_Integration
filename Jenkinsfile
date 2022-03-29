@@ -18,10 +18,13 @@ pipeline {
     booleanParam(name: 'leaf_spine_onboarding',
                  defaultValue: true,
 		 description: 'Run the leaf_spine_onboarding test suite')	 
-    choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')  
+    choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')
     booleanParam(name: 'Publish',
                  defaultValue: true,
-		 description: 'publish results to qtest')	     
+		 description: 'publish results to qtest')	  
+    booleanParam(name: 'PublishRobotResults',
+                 defaultValue: true,
+		 description: 'publish robot results')	     
   }
 
 
@@ -39,6 +42,12 @@ stages {
             }
           }
         }
+	stage('PublishRobotResults') {
+              agent any
+              steps {
+              robot archiveDirName: 'robot-plugin', logFileName: 'log.html', outputFileName: 'Output.xml', outputPath: '/home/developer/qtest/qTest_Integration/src/test_results', overwriteXAxisLabel: '', reportFileName: 'report.html'
+              }
+            } 
         stage('Publish') {
               agent any
               steps {
