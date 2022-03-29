@@ -19,12 +19,12 @@ pipeline {
                  defaultValue: true,
 		 description: 'Run the leaf_spine_onboarding test suite')	 
     choice(name: 'OR_PODS', choices: ['testbed1', 'testbed2', 'testbed3', 'testbed4'], description: 'This will work only stage1 is clicked')
-    booleanParam(name: 'Publish',
-                 defaultValue: true,
-		 description: 'publish results to qtest')	  
     booleanParam(name: 'PublishRobotResults',
                  defaultValue: true,
-		 description: 'publish robot results')	     
+		 description: 'publish robot results')	  
+    booleanParam(name: 'Publish',
+                 defaultValue: true,
+		 description: 'publish results to qtest')	  	     
   }
 
 
