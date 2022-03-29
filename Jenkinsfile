@@ -15,6 +15,7 @@ testParams = [:]
 pipeline {
   agent any
   parameters {
+    separator(name: "LAST_AUTOMATION", sectionHeader: "Downstream Jobs - Team LAST Automation - Stages and Parameters")
     booleanParam(name: 'leaf_spine_onboarding',
                  defaultValue: true,
 		 description: 'Run the leaf_spine_onboarding test suite')	 
