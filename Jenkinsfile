@@ -2,7 +2,7 @@
 
 def runTest(application) {
 		echo "application: $application"
-	        if( $application == leaf_spine_onboarding-* ){
+	        if( $application =~ leaf_spine_onboarding-* ){
                 application = leaf_spine_onboarding 
 	        }	       
 		dir("test-${application}") {
