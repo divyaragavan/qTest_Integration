@@ -1,10 +1,11 @@
 #!groovy
 
 def runTest(application) {
-		echo "application: $application"
-	        if( $application =~ leaf_spine_onboarding-* ){
-                application = leaf_spine_onboarding 
-	        }	       
+	      if( $application =~ leaf_spine_onboarding-* ){
+		 echo "BEFORE: $application"
+                 application = 'leaf_spine_onboarding'
+		 echo "AFTER: $application"
+	      }	       
 		dir("test-${application}") {
 			//a = sh "pwd"
 			//echo "$a"
