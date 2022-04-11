@@ -1,12 +1,12 @@
 #!groovy
 
 def runTest(application) {
-	      if( application =~ /leaf_spine_onboarding-*/ ){
+	      if( application =~ /leaf-spine-onboarding-*/ ){
 		 echo "BEFORE: $application"
                  application = 'leaf_spine_onboarding'
 		 echo "AFTER: $application"
 	      }	       
-		dir("test-${application}") {
+//		dir("test-${application}") {
 			//a = sh "pwd"
 			//echo "$a"
 			//sh "ls -lrt /root/.jenkins/workspace/divyaragavan_fork_main/src/test_results"
@@ -14,7 +14,7 @@ def runTest(application) {
 			//sh "ls -lrt /root/.jenkins/workspace/divyaragavan_fork_main/src/test_results"
 			//sh "make test-leaf-spine-onboarding"
 			
-		}
+//		}
 }
 
 testParams = [:]
