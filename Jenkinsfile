@@ -1,7 +1,7 @@
 #!groovy
 
 def runTest(application) {
-	      if( application =~ /leaf-spine-onboarding-*/ ){
+	      if( application =~ /leaf-spine-onboarding-.*/ ){
 		 echo "BEFORE: $application"
                  application = 'leaf-spine-onboarding'
 		 echo "AFTER: $application"
