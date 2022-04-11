@@ -46,7 +46,14 @@ stages {
             script {
               var = params.OR_PODS
               echo "VAR  $var"
-	      
+	      if(params.OR_PODS == 'testbed1)
+		 echo "##########1###########"
+	      else if(params.OR_PODS == 'testbed2)
+		 echo "##########2###########"
+	      else if(params.OR_PODS == 'testbed3)
+		 echo "##########3###########"
+	      else if(params.OR_PODS == 'testbed4)
+		 echo "##########4###########"		 
 	      runTest('leaf-spine-onboarding')
             }
           }
