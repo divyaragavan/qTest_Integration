@@ -54,7 +54,7 @@ stages {
 		 echo "##########3###########"
 	      else if(params.OR_PODS == 'testbed4')
 		 echo "##########4###########"		 
-	      runTest('leaf-spine-onboarding')
+	      runTest('leaf-spine-onboarding-x-large')
             }
           }
         }
