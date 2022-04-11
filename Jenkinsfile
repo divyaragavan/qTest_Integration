@@ -3,7 +3,7 @@
 def runTest(application) {
 	      if( application =~ /leaf-spine-onboarding-*/ ){
 		 echo "BEFORE: $application"
-                 application = 'leaf_spine_onboarding'
+                 application = 'leaf-spine-onboarding'
 		 echo "AFTER: $application"
 	      }	       
 //		dir("test-${application}") {
