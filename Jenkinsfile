@@ -16,7 +16,7 @@ def check_resource_availability(resource_type_list) {
 	var1=runTest(item)
         echo "status: $var1"
 	if (var1 == true){
-	 return true 
+	 return false 
 	}
    }
 }
