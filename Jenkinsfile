@@ -1,7 +1,6 @@
 #!groovy
 
 def runTest(application) {
-  echo "Inside run test function: $application"
   return false
  }
 
