@@ -1,8 +1,12 @@
 #!groovy
 
 def runTest(application) {
-  echo "app: $application"
-  return false
+ try {
+        echo "I am try block"
+	return true
+      } finally {
+	    echo "commented for testing purpose"        
+      }
  }
 
 def check_resource_availability(resource_type_list) {
@@ -13,6 +17,32 @@ def check_resource_availability(resource_type_list) {
 	if (var1 == true){
 	 return true 
 	}
+   }
+}
+
+def runTest1(application, useHydraTopology=true) {
+  echo "Inside run test function: $application"
+  withHydraResource(testParams['APPLICATION'][application]['HYDRA_RESOURCE_TYPE']) {
+    topologyUrl -> withAutoCleanNode(testParams['JENKINS_AGENT_LABEL']) {
+      try {
+        checkout scm
+        echo "I am try block"
+	return true
+      } finally {
+	    echo "commented for testing purpose"        
+      }
+      return false
+    }
+   }
+ }
+
+def check_resource_availability1(resource_list) {
+  resource_list.each { item ->
+        echo "Hello ${item}"
+	var1=runTest(item, useHydraTopology=true)
+        echo "status: $var1"
+	if(var1)
+	  return true 
    }
 }
 
