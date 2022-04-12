@@ -15,22 +15,6 @@ def check_resource_availability(resource_list) {
 	}
    }
 }
-/*def runTest(application) {
-	      if( application =~ /leaf-spine-onboarding-.*/ ){
-		 echo "BEFORE: $application"
-                 application = 'leaf-spine-onboarding'
-		 echo "AFTER: $application"
-	      }	       
-//		dir("test-${application}") {
-			//a = sh "pwd"
-			//echo "$a"
-			//sh "ls -lrt /root/.jenkins/workspace/divyaragavan_fork_main/src/test_results"
-			//sh "cd /home/developer/qtest/qTest_Integration/src && make test-leaf-spine-onboarding"
-			//sh "ls -lrt /root/.jenkins/workspace/divyaragavan_fork_main/src/test_results"
-			//sh "make test-leaf-spine-onboarding"
-			
-//		}
-}*/
 
 testParams = [:]
 
