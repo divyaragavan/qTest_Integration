@@ -3,7 +3,7 @@
 def runTest(application) {
  try {
         echo "I am try block"
-	if(application == 'testbed2'
+	if(application == 'testbed2')
 	   return true
       } finally {
 	    echo "commented for testing purpose"        
