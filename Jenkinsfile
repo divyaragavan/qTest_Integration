@@ -53,7 +53,7 @@ stages {
 	      else if(params.OR_PODS == 'testbed4')
 		  resource_type_list= ['or-large' ,'or-small' ,'or-medium' ,'or-x-large']
 		  resource_type=check_resource_availability(resource_type_list)
-	          echo "***resource_type***:$resource_type"	 
+	          echo $resource_type
 	      //runTest('leaf-spine-onboarding-x-large')
             }
           }
