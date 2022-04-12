@@ -1,6 +1,21 @@
 #!groovy
 
 def runTest(application) {
+  echo "Inside run test function: $application"
+  return false
+ }
+
+def check_resource_availability(resource_list) {
+  resource_list.each { item ->
+        echo "Hello ${item}"
+	var1=runTest(${item})
+        //echo "status: $var1"
+	if (var1 == true){
+	 return true 
+	}
+   }
+}
+/*def runTest(application) {
 	      if( application =~ /leaf-spine-onboarding-.*/ ){
 		 echo "BEFORE: $application"
                  application = 'leaf-spine-onboarding'
@@ -15,7 +30,7 @@ def runTest(application) {
 			//sh "make test-leaf-spine-onboarding"
 			
 //		}
-}
+}*/
 
 testParams = [:]
 
@@ -53,8 +68,10 @@ stages {
 	      else if(params.OR_PODS == 'testbed3')
 		 echo "##########3###########"
 	      else if(params.OR_PODS == 'testbed4')
-		 echo "##########4###########"		 
-	      runTest('leaf-spine-onboarding-x-large')
+		  resource_type_list= ['or-large' ,'or-small' ,'or-medium' ,'or-x-large']
+		  resource_type=check_resource_availability(resource_type_list)
+	          echo "***resource_type***:$resource_type"	 
+	      //runTest('leaf-spine-onboarding-x-large')
             }
           }
         }
