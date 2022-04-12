@@ -17,8 +17,9 @@ def check_resource_availability(resource_type_list) {
         echo "status: $var1"
 	if (var1){
 	 echo "inside if"
-	 return true
+         return
 	}
+	echo "HIIIIIIIIIIIIIIIIIII"
    }
 }
 
