@@ -6,7 +6,8 @@ def runTest(application) {
 	return true
       } finally {
 	    echo "commented for testing purpose"        
-      }return false
+      }
+      return false
  }
 
 def check_resource_availability(resource_type_list) {
