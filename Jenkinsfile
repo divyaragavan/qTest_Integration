@@ -15,7 +15,8 @@ def check_resource_availability(resource_type_list) {
         echo "Hello ${item}"
 	var1=runTest(item)
         echo "status: $var1"
-	if (var1 == true){
+	if (var1){
+	 echo "inside if"
 	 return false 
 	}
    }
