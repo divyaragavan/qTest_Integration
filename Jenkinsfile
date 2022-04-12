@@ -2,8 +2,8 @@
 
 
 
-def check_resource_availability(resource_list) {
-  resource_list.each { item ->
+def check_resource_availability(resource_type_list) {
+  resource_type_list.each { item ->
         echo "Hello ${item}"
 	var1=runTest(${item})
         //echo "status: $var1"
@@ -54,8 +54,8 @@ stages {
 		 echo "##########3###########"
 	      else if(params.OR_PODS == 'testbed4')
 		  resource_type_list= ['or-large' ,'or-small' ,'or-medium' ,'or-x-large']
-		  check_resource_availability(resource_type_list)
-	          //echo $resource_type
+		  resource_type=check_resource_availability(resource_type_list)
+	          echo "res: $resource_type"
 	      //runTest('leaf-spine-onboarding-x-large')
             }
           }
