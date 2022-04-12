@@ -1,13 +1,14 @@
 #!groovy
 
 def runTest(application) {
+  echo "app: $application"
   return false
  }
 
 def check_resource_availability(resource_type_list) {
   resource_type_list.each { item ->
         echo "Hello ${item}"
-	runTest(${item})
+	runTest(item})
         //echo "status: $var1"
 	/*if (var1 == true){
 	 return true 
