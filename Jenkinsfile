@@ -7,11 +7,11 @@ def runTest(application) {
 def check_resource_availability(resource_type_list) {
   resource_type_list.each { item ->
         echo "Hello ${item}"
-	var1=runTest(${item})
+	runTest(${item})
         //echo "status: $var1"
-	if (var1 == true){
+	/*if (var1 == true){
 	 return true 
-	}
+	}*/
    }
 }
 
