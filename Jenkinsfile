@@ -1,6 +1,8 @@
 #!groovy
 
-
+def runTest(application) {
+  return false
+ }
 
 def check_resource_availability(resource_type_list) {
   resource_type_list.each { item ->
@@ -12,10 +14,6 @@ def check_resource_availability(resource_type_list) {
 	}
    }
 }
-
-def runTest(application) {
-  return false
- }
 
 testParams = [:]
 
