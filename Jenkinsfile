@@ -3,7 +3,7 @@
 def runTest(application) {
  try {
       echo "I am try block"
-      if(application == 'testbed3')
+      if(application == 'testbed2')
 	 {
 	 echo "I am inside IFFFF"
 	 return true
@@ -11,7 +11,7 @@ def runTest(application) {
       } finally {
 	    echo "commented for testing purpose"        
       }
-      return false
+      
  }
 
 def check_resource_availability(resource_type_list) {
