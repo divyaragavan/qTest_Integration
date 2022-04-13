@@ -85,7 +85,7 @@ stages {
 	      else if(params.OR_PODS == 'testbed3')
 		 echo "##########3###########"
 	      else if(params.OR_PODS == 'testbed4')
-		  resource_type_list= ['or-large' ,'or-small' ,'or-medium' ,'or-x-large']
+		  resource_type_list= ['testbed1', 'testbed2', 'testbed3', 'testbed4']
 		  resource_type=check_resource_availability(resource_type_list)
 	          echo "res: $resource_type"
 	      //runTest('leaf-spine-onboarding-x-large')
