@@ -3,7 +3,7 @@
 def runTest(application) {
  try {
       echo "I am try block"
-      if(application == 'testbed4')
+      if(application == 'testbed3')
 	 {
 	 echo "I am inside IFFFF"
 	 return true
