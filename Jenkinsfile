@@ -12,16 +12,9 @@ def runTest(application) {
  }
 
 def check_resource_availability(resource_type_list) {
-  resource_type_list.each { item ->
-        echo "Hello ${item}"
-	var1=runTest(item)
-        echo "status: $var1"
-	if (var1){
-	 echo "inside if"
-         return
-	}
-	echo "HIIIIIIIIIIIIIIIIIII"
-   }
+    for (int i = 0; i < resource_type_list.size(); i++) {
+        sh "echo Hello ${list[i]}"
+    }	
 }
 
 def runTest1(application, useHydraTopology=true) {
