@@ -4,8 +4,10 @@ def runTest(application) {
  try {
       echo "I am try block"
       if(application == 'testbed4')
+	 {
 	 echo "I am inside IFFFF"
 	 return true
+	 }
       } finally {
 	    echo "commented for testing purpose"        
       }
