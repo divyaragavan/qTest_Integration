@@ -13,7 +13,7 @@ def runTest(application) {
 
 def check_resource_availability(resource_type_list) {
     for (int i = 0; i < resource_type_list.size(); i++) {
-        sh "echo Hello ${list[i]}"
+        sh "echo Hello ${resource_type_list[i]}"
     }	
 }
 
