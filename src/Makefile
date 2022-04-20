@@ -17,5 +17,5 @@ endif
 
 .PHONY: test-leaf-spine-onboarding
 test-leaf-spine-onboarding:
-	@echo $(SKIP_TAGS_VARS)
+	@echo HI
 
