@@ -4,17 +4,14 @@ TOPOLOGY_URL= ''
 
 def runTest(application, useHydraTopology=true) {
   echo "Inside run test function: $application"
-  withHydraResource(testParams['APPLICATION'][application]['HYDRA_RESOURCE_TYPE']) {
-    topologyUrl -> withAutoCleanNode(testParams['JENKINS_AGENT_LABEL']) {
       try {
         checkout scm
         echo "I am try block"
-	TOPOLOGY_URL = ${topologyUrl}
+        TOPOLOGY_URL = "or-large"
       } finally {
 	    echo "commented for testing purpose"        
       }
-    }
-   }
+
  }
 
 testParams = [:]
