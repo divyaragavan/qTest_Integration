@@ -36,11 +36,9 @@ def runTest(application, useHydraTopology=true) {
         checkout scm
         echo "I am try block"
 	TOPOLOGY_URL = ${topologyUrl}
-	return true
       } finally {
 	    echo "commented for testing purpose"        
       }
-      return false
     }
    }
  }
@@ -94,7 +92,7 @@ stages {
 		  resource_type_list= ['testbed1', 'testbed2', 'testbed3', 'testbed4']
 		  resource_type=check_resource_availability(resource_type_list)
 	          echo "res: $resource_type"
-	      //runTest('leaf-spine-onboarding-x-large')
+	      runTest('leaf-spine-onboarding-large')
             }
           }
         }
