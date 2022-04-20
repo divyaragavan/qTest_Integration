@@ -17,6 +17,5 @@ endif
 
 .PHONY: test-leaf-spine-onboarding
 test-leaf-spine-onboarding:
-	robot keywords/leaf_spine_onboarding.robot
 	@echo $(SKIP_TAGS_VARS)
-	$(REBOT) $(TEST_RESULTS)/output.xml
+
