@@ -8,6 +8,7 @@ def runTest(application, useHydraTopology=true) {
         checkout scm
         echo "I am try block"
         TOPOLOGY_URL = "or-large"
+	make test-leaf-spine-onboarding
       } finally {
 	    echo "commented for testing purpose"        
       }
