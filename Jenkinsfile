@@ -1,5 +1,7 @@
 #!groovy
 
+TOPOLOGY_URL= ''
+
 def runTest(application) {
  try {
       echo "I am try block"
@@ -33,6 +35,7 @@ def runTest1(application, useHydraTopology=true) {
       try {
         checkout scm
         echo "I am try block"
+	TOPOLOGY_URL = ${topologyUrl}
 	return true
       } finally {
 	    echo "commented for testing purpose"        
