@@ -2,7 +2,7 @@
 
 TOPOLOGY_URL= ''
 
-def runTest(application) {
+def runTest1(application) {
  try {
       echo "I am try block"
       if(application == 'testbed2')
@@ -28,7 +28,7 @@ def check_resource_availability(resource_type_list) {
     }	
 }
 
-def runTest1(application, useHydraTopology=true) {
+def runTest(application, useHydraTopology=true) {
   echo "Inside run test function: $application"
   withHydraResource(testParams['APPLICATION'][application]['HYDRA_RESOURCE_TYPE']) {
     topologyUrl -> withAutoCleanNode(testParams['JENKINS_AGENT_LABEL']) {
