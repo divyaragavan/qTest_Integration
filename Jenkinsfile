@@ -2,32 +2,6 @@
 
 TOPOLOGY_URL= ''
 
-def runTest1(application) {
- try {
-      echo "I am try block"
-      if(application == 'testbed2')
-	 {
-	 echo "I am inside IFFFF"
-	 return true
-	 }
-      } finally {
-	    echo "commented for testing purpose"        
-      }
-      
- }
-
-def check_resource_availability(resource_type_list) {
-    for (int i = 0; i < resource_type_list.size(); i++) {
-        echo "Hello ${resource_type_list[i]}"
-	result=runTest(resource_type_list[i])
-        echo "result: $result"
-	 if(result){
-	  break;
-	 }
-	 echo "Break not workingg"	
-    }	
-}
-
 def runTest(application, useHydraTopology=true) {
   echo "Inside run test function: $application"
   withHydraResource(testParams['APPLICATION'][application]['HYDRA_RESOURCE_TYPE']) {
@@ -42,16 +16,6 @@ def runTest(application, useHydraTopology=true) {
     }
    }
  }
-
-def check_resource_availability1(resource_list) {
-  resource_list.each { item ->
-        echo "Hello ${item}"
-	var1=runTest(item, useHydraTopology=true)
-        echo "status: $var1"
-	if(var1)
-	  return true 
-   }
-}
 
 testParams = [:]
 
@@ -88,10 +52,6 @@ stages {
 		 echo "##########2###########"
 	      else if(params.OR_PODS == 'testbed3')
 		 echo "##########3###########"
-	      else if(params.OR_PODS == 'testbed4')
-		  resource_type_list= ['testbed1', 'testbed2', 'testbed3', 'testbed4']
-		  resource_type=check_resource_availability(resource_type_list)
-	          echo "res: $resource_type"
 	      runTest('leaf-spine-onboarding-large')
             }
           }
